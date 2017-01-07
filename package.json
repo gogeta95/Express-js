@@ -1,0 +1,23 @@
+{
+  "name": "express_sample",
+  "version": "1.0.0",
+  "description": "Express sample",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gogeta95/Express-js.git"
+  },
+  "author": "Saurabh singhal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gogeta95/Express-js/issues"
+  },
+  "homepage": "https://github.com/gogeta95/Express-js#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
