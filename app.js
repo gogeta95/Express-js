@@ -1,19 +1,29 @@
 var express= require('express');
 var bodyParser = require('body-parser');
+var multer= require('multer');
+var upload= multer();
 var app= express();
 
 
-app.use(bodyParser.urlencoded({ extended:false}));
+app.use(bodyParser.urlencoded({ extended:true}));
 app.use(bodyParser.json());
+app.use(upload.array());
 app.use(function(req,res,next) {
 	console.log("Request recieved at: "+Date.now());
 	next();
 });
 var router=require('./route.js');
 app.use('/route',router);
+app.get('/submit',function(req,res) {
+res.send(JSON.stringify(req.query)+'<br>GET');
+});
 
 app.get('/:name', function(req, res){
     res.send(' name: ' + req.params.name);
+});
+
+app.post('/submit',function(req,res) {
+res.send(JSON.stringify(req.body)+"<br> Post");
 });
 
 app.post('/', function (req,res) {
