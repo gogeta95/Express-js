@@ -18,8 +18,8 @@ app.get('/submit',function(req,res) {
 res.send(JSON.stringify(req.query)+'<br>GET');
 });
 
-app.get('/:name', function(req, res){
-    res.send(' name: ' + req.params.name);
+app.get('/:name', function(request, response){
+    response.send(' name: ' + request.params.name);
 });
 
 app.post('/submit',function(req,res) {
